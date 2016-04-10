@@ -1,0 +1,6 @@
+---
+pgsql:
+    database: phansible
+    user: changme
+    password: changme
+    dump: ""
