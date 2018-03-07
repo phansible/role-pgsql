@@ -1,5 +1,5 @@
 ---
-pgsql:
+postgresql:
     database: phansible
     user: changme
     password: changme
