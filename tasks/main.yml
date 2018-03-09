@@ -14,10 +14,10 @@
 
 - name: Install PostgreSQL Packages
   become: yes
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=latest force=yes
   with_items:
-    - postgresql-9.4
-    - postgresql-client-9.4
+    - postgresql
+    - postgresql-client
     - python-pygresql
     - python-psycopg2
 
@@ -35,4 +35,4 @@
 - name: Create users
   become: yes
   become_user: postgres
-  postgresql_user: name={{ postgresql.user }} password={{ postgresql.password }} db={{ postgresql.database }} priv=ALL
+  postgresql_user: name={{ postgresql.user }} password={{ postgresql.password }} db={{ postgresql.database }} priv=ALL encrypted=true
