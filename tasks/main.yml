@@ -14,8 +14,12 @@
 
 - name: Install PostgreSQL Packages
   become: yes
-  apt: pkg={{ item }} state=latest force=yes
-  with_items:
+  apt:
+      name: "{{ packages }}" 
+      state: latest 
+      force: yes
+  vars:
+    packages:
     - postgresql
     - postgresql-client
     - python-pygresql
